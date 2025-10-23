@@ -89,3 +89,8 @@ curl -X POST http://localhost:8000/assist \
 **COMPONENT_ANALYSIS**: Datasheet extraction
 **SUPPLY_CHAIN**: Availability checks
 **FINAL_RESPONSE**: Streamed analysis
+
+## Make the test scripts executable
+```
+chmod +x test_runner.py
+``` 
