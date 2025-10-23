@@ -1,0 +1,79 @@
+{
+  "ee_domains": {
+    "embedded_systems": {
+      "priority": 1.0,
+      "keywords": ["microcontroller", "MCU", "SoC", "RTOS", "firmware", "ARM", "RISC-V"],
+      "subcategories": ["microcontrollers", "single_board_computers", "real_time_os"],
+      "compliance": ["CE", "FCC", "RoHS", "REACH"]
+    },
+    "power_management": {
+      "priority": 0.9,
+      "keywords": ["PMIC", "DC-DC", "LDO", "buck", "boost", "battery management"],
+      "subcategories": ["switching_regulators", "linear_regulators", "battery_management"],
+      "key_metrics": ["efficiency", "quiescent_current", "load_regulation", "thermal_performance"]
+    },
+    "emc_emi": {
+      "priority": 0.9,
+      "keywords": ["EMC", "EMI", "electromagnetic compatibility", "shielding", "filtering"],
+      "subcategories": ["emi_filters", "shielding_materials", "esd_protection"],
+      "standards": ["CISPR", "IEC61000", "EN55032", "FCC_Part15"]
+    },
+    "edge_ai": {
+      "priority": 0.85,
+      "keywords": ["edge AI", "neural processing", "NPU", "AI accelerator", "TinyML", "quantization"],
+      "subcategories": ["ai_accelerators", "neural_processors", "tinyml_frameworks"],
+      "frameworks": ["TensorFlow Lite", "ONNX", "TVM", "Neural Network SDK"]
+    },
+    "analog_design": {
+      "priority": 0.7,
+      "keywords": ["ADC", "DAC", "amplifier", "analog signal processing", "precision"],
+      "subcategories": ["data_converters", "op_amps", "analog_filters", "precision_references"],
+      "key_specs": ["resolution", "sampling_rate", "SNR", "THD", "offset_drift"]
+    },
+    "rf_wireless": {
+      "priority": 0.6,
+      "keywords": ["RF", "wireless", "Bluetooth", "WiFi", "LoRa", "Zigbee", "NFC"],
+      "subcategories": ["ble", "wifi", "sub_ghz", "cellular_iot", "nfc"],
+      "protocols": ["BLE 5.3", "WiFi 6", "LoRaWAN", "Zigbee 3.0", "Matter", "Thread"]
+    },
+    "digital_systems": {
+      "priority": 0.6,
+      "keywords": ["FPGA", "CPLD", "digital logic", "HDL", "Verilog", "VHDL"],
+      "subcategories": ["fpgas", "cplds", "digital_signal_processing"],
+      "tools": ["Vivado", "Quartus", "Lattice Diamond"]
+    }
+  },
+  "geographic_priorities": {
+    "EU": {
+      "distributors": ["Digi-Key EU", "Mouser EU", "RS Components", "Farnell", "TME"],
+      "compliance": ["CE", "RoHS", "REACH", "WEEE", "EN standards"],
+      "priority_countries": ["Germany", "Netherlands", "UK", "France", "Poland"]
+    },
+    "Asia": {
+      "distributors": ["Digi-Key Asia", "Mouser Asia", "LCSC", "Element14 Asia", "Chip1Stop"],
+      "compliance": ["CCC", "PSE", "KC", "BSMI", "RoHS China"],
+      "priority_countries": ["China", "Japan", "South Korea", "Taiwan", "Singapore", "India"]
+    }
+  },
+  "research_sources": {
+    "academic": ["IEEE Xplore", "arXiv", "Semantic Scholar", "Google Scholar", "ResearchGate"],
+    "patents": ["Google Patents", "Espacenet", "USPTO", "WIPO"],
+    "industry": ["EDN", "EE Times", "All About Circuits", "Hackaday", "Electronics Weekly"],
+    "manufacturer_docs": ["Application Notes", "Reference Designs", "Technical Briefs", "White Papers"]
+  },
+  "innovation_criteria": {
+    "breakthrough_threshold": 0.15,
+    "performance_metrics": {
+      "power_efficiency": ">=15% improvement",
+      "cost_reduction": ">=20% reduction",
+      "size_reduction": ">=30% smaller footprint",
+      "speed_improvement": ">=25% faster processing"
+    },
+    "trl_levels": {
+      "1-3": "Basic Research",
+      "4-6": "Technology Development",
+      "7-8": "System Development",
+      "9": "Production Ready"
+    }
+  }
+}

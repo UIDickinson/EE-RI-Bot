@@ -1,0 +1,12 @@
+sentient-agent-framework
+anthropic
+openai
+python-dotenv
+httpx
+requests
+arxiv
+pdfplumber
+trafilatura
+neo4j
+beautifulsoup4
+lxml
