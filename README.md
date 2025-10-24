@@ -94,3 +94,83 @@ curl -X POST http://localhost:8000/assist \
 ```
 chmod +x test_runner.py
 ``` 
+
+## Testing
+
+### Quick Health Check
+
+Before running tests, verify all components are working:
+```bash
+python scripts/health_check.py
+```
+
+This checks:
+- ✅ Environment variables configured
+- ✅ All modules import correctly
+- ✅ LLM provider initializes
+- ✅ Tools initialize properly
+- ✅ Required files exist
+
+### Running Tests
+
+**Quick tests** (no API calls, ~30 seconds):
+```bash
+./scripts/run_tests.sh quick
+```
+
+**Full test suite** (includes API calls, ~5 minutes):
+```bash
+./scripts/run_tests.sh full
+```
+
+**Integration tests only**:
+```bash
+./scripts/run_tests.sh integration
+```
+
+**With coverage report**:
+```bash
+./scripts/run_tests.sh coverage
+# View report: open htmlcov/index.html
+```
+
+### Manual Testing
+
+**Individual test files**:
+```bash
+# Tool tests
+python -m pytest tests/test_tools.py -v
+
+# LLM provider tests (uses API credits)
+python -m pytest tests/test_llm_provider.py -v
+
+# Edge cases
+python -m pytest tests/test_edge_cases.py -v
+```
+
+**Comprehensive test runner**:
+```bash
+python test_runner.py
+```
+
+### Test Coverage
+
+Current test coverage includes:
+- ✅ Research tools (arXiv, Semantic Scholar)
+- ✅ Component analysis
+- ✅ Supply chain tracking
+- ✅ Datasheet parsing
+- ✅ Patent search
+- ✅ Compliance checking
+- ✅ Cost estimation
+- ✅ LLM provider initialization
+- ✅ Edge cases and error handling
+- ✅ API endpoint validation
+
+### Continuous Testing
+
+For development, run tests on file changes:
+```bash
+pip install pytest-watch
+ptw tests/ -- -v
+```
