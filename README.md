@@ -174,3 +174,10 @@ For development, run tests on file changes:
 pip install pytest-watch
 ptw tests/ -- -v
 ```
+
+### make your database script executable
+```
+chmod +x database/init_db.py
+
+chmod +x scripts/setup_postgres.sh
+```
