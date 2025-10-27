@@ -1,3 +1,8 @@
+"""
+EE Research & Innovation Scout Agent - Multi-Provider Support with Web Interface
+Supports: OpenAI, Claude (Anthropic), OpenRouter
+"""
+
 import logging
 import os
 from dotenv import load_dotenv
@@ -10,6 +15,7 @@ from sentient_agent_framework import (
 )
 from typing import AsyncIterator, Dict, List, Any
 import json
+from pathlib import Path
 
 load_dotenv()
 logger = logging.getLogger(__name__)
@@ -331,6 +337,21 @@ Provide detailed, structured analysis:"""
 
 if __name__ == "__main__":
     agent = EEResearchScout(name="EE-Research-Scout")
-    server = DefaultServer(agent)
-    logger.info("Starting EE Research Scout Agent on http://localhost:8000")
-    server.run()
+    
+    # Create static directory if it doesn't exist
+    static_dir = Path(__file__).parent / "static"
+    static_dir.mkdir(exist_ok=True)
+    
+    server = DefaultServer(
+        agent,
+        static_dir=str(static_dir)
+    )
+    
+    port = int(os.getenv("PORT", 8000))
+    host = os.getenv("HOST", "0.0.0.0")
+    
+    logger.info(f"Starting EE Research Scout Agent")
+    logger.info(f"Web Interface: http://localhost:{port}")
+    logger.info(f"API Endpoint: http://localhost:{port}/assist")
+    
+    server.run(host=host, port=port)
