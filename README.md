@@ -176,8 +176,36 @@ ptw tests/ -- -v
 ```
 
 ### make your database script executable
-```
+```bash
 chmod +x database/init_db.py
 
 chmod +x scripts/setup_postgres.sh
+```
+## setup cmds
+```bash
+# 1. Install PostgreSQL (choose one)
+./scripts/setup_postgres.sh    # For Linux/ChromeOS
+# OR
+brew install postgresql@15      # For macOS
+# OR
+docker run --name ee-postgres -e POSTGRES_PASSWORD=password -p 5432:5432 -d postgres:15-alpine
+
+# 2. Install Python dependencies
+pip install psycopg2-binary sqlalchemy alembic
+
+# 3. Update .env file
+cat >> .env << EOF
+POSTGRES_USER=ee_user
+POSTGRES_PASSWORD=your_secure_password
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+POSTGRES_DB=ee_research_scout
+EOF
+
+# 4. Initialize database
+python database/init_db.py
+
+# 5. Verify connection
+python -c "from database.connection import db_manager; print('✅ Connected!' if db_manager.test_connection() else '❌ Failed')"
+
 ```
