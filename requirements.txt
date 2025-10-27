@@ -7,6 +7,8 @@ requests
 arxiv
 pdfplumber
 trafilatura
+lxml_html_clean
 neo4j
 beautifulsoup4
 lxml
+justext
