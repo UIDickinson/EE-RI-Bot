@@ -15,6 +15,20 @@ AI agent built with **Sentient Agent Framework** for Electrical/Electronics Engi
 - 🧠 **Knowledge Graph**: Neo4j relationship tracking (optional)
 - 🤖 **Multi-Provider**: OpenAI, Claude (Anthropic), OpenRouter
 
+### Extras
+- Real-time streaming responses
+- Event-based updates (analysis, research, components)
+- Example queries for quick start
+- Responsive design for mobile/desktop
+- Visual feedback for processing stages
+
+### Web Interface (Browser)
+
+1. Navigate to `http://localhost:8000` (or your deployed URL)
+2. Type your query in the input box
+3. Click "Send" or press Enter
+4. Watch real-time responses stream in
+
 ## Quick Start
 
 ```bash
@@ -208,4 +222,30 @@ python database/init_db.py
 # 5. Verify connection
 python -c "from database.connection import db_manager; print('✅ Connected!' if db_manager.test_connection() else '❌ Failed')"
 
+```
+### API (Programmatic)
+```bash
+curl -X POST https://your-app.onrender.com/assist \
+  -H "Content-Type: application/json" \
+  -d '{
+    "session": {
+      "user_id": "user_123",
+      "session_id": "session_456",
+      "processor_id": "api_client",
+      "activity_id": "activity_101",
+      "request_id": "req_202",
+      "interactions": []
+    },
+    "query": {
+      "id": "query_303",
+      "prompt": "Find latest GaN power ICs for automotive"
+    }
+  }'
+```
+
+### Common Issues
+
+**"Module not found" error:**
+```bash
+pip install -r requirements.txt --upgrade
 ```
